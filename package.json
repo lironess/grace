@@ -3,10 +3,9 @@
   "version": "0.0.0",
   "description": "",
   "scripts": {
-    "build": "node_modules/gulp/bin/gulp.js",
-    "watch": "node_modules/gulp/bin/gulp.js watch",
+    "build": "node_modules/gulp/bin/gulp.js build",
     "start": "npm run build && node dist/server.js",
-    "debug": "node_modules/babel-cli/bin/babel-node.js src/server.js"
+    "debug": "node_modules/gulp/bin/gulp.js"
   },
   "author": "Liron Shmuel <liron@500tech.com>",
   "license": "ISC",
@@ -17,7 +16,8 @@
     "del": "^2.2.0",
     "eslint": "^2.0.0",
     "gulp": "^3.9.1",
-    "gulp-babel": "^6.1.2"
+    "gulp-babel": "^6.1.2",
+    "gulp-nodemon": "^2.0.6"
   },
   "dependencies": {
     "body-parser": "^1.15.0",

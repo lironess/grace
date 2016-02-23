@@ -1,6 +1,7 @@
 import gulp from 'gulp';
 import del from 'del';
 import babel from 'gulp-babel';
+import nodemon from 'gulp-nodemon';
 
 const paths = {
   source: 'src/**/*.js',
@@ -17,8 +18,13 @@ gulp.task('compile', () => {
     .pipe(gulp.dest(paths.destination))
 });
 
-gulp.task('default', ['clean', 'compile']);
-
-gulp.task('watch', () => {
-  gulp.watch(paths.source, ['default'])
+gulp.task('start', (done) => {
+  nodemon({
+    script: 'src/server.js',
+    ext: 'js',
+    exec: 'babel-node'
+  });
 });
+
+gulp.task('build', [ 'clean', 'compile' ]);
+gulp.task('default', [ 'start' ]);
