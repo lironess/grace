@@ -22,7 +22,7 @@ gulp.task('start', (done) => {
   nodemon({
     script: 'src/server.js',
     ext: 'js',
-    exec: 'node_modules/babel-node-debug/bin/bode-debug.js'
+    exec: 'node_modules/.bin/babel-node-debug -c'
   });
 });
 
