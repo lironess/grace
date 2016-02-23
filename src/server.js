@@ -29,7 +29,7 @@ passport.use(new LocalStrategy(Account.authenticate()));
 passport.serializeUser(Account.serializeUser());
 passport.deserializeUser(Account.deserializeUser());
 
-mongoose.connect('mongodb://localhost/myFirstApp');
+mongoose.connect('mongodb://localhost/grace');
 
 app.listen(3000, () => {
   console.log('Example app listening on port 3000!');
