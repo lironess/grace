@@ -4,6 +4,7 @@ import bodyParser from 'body-parser';
 import cookieParser from 'cookie-parser';
 import expressSession from 'express-session';
 import passport from 'passport';
+import cors from 'cors';
 import { Strategy as LocalStrategy } from 'passport-local';
 import mongoose from 'mongoose';
 import Routes from './routes/index';
@@ -14,6 +15,7 @@ const app = express();
 app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
+app.use(cors());
 app.use(cookieParser());
 app.use(expressSession({
   secret: 'keyboard cat',
