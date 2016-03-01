@@ -22,14 +22,14 @@
   },
   "dependencies": {
     "body-parser": "^1.15.0",
-    "cookie-parser": "^1.4.1",
     "cors": "^2.7.1",
     "express": "^4.13.4",
-    "express-session": "^1.13.0",
+    "jsonwebtoken": "^5.7.0",
     "mongoose": "^4.4.3",
     "mongoose-role": "^1.2.0",
     "morgan": "^1.6.1",
     "passport": "^0.3.2",
+    "passport-jwt": "^2.0.0",
     "passport-local": "^1.0.0",
     "passport-local-mongoose": "^4.0.0"
   }
