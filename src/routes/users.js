@@ -1,6 +1,5 @@
 import express from 'express';
-import passport from 'passport';
-import hasAccess from '../userAccess';
+import hasAccess from '../middleware/userAccess';
 import Account from '../models/account';
 
 const router = express.Router();

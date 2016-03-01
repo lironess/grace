@@ -1,7 +1,6 @@
 import express from 'express';
 import logger from 'morgan';
 import bodyParser from 'body-parser';
-import cookieParser from 'cookie-parser';
 import expressSession from 'express-session';
 import passport from 'passport';
 import cors from 'cors';
@@ -16,11 +15,10 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cors());
-app.use(cookieParser());
 app.use(expressSession({
   secret: 'keyboard cat',
-  resave: false,
-  saveUninitialized: false
+  resave: true,
+  saveUninitialized: true
 }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -33,6 +31,6 @@ passport.deserializeUser(Account.deserializeUser());
 
 mongoose.connect('mongodb://localhost/grace');
 
-app.listen(3000, () => {
-  console.log('Example app listening on port 3000!');
+app.listen(3001, () => {
+  console.log('Example app listening on port 3001!');
 });

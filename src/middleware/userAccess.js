@@ -1,5 +1,6 @@
 export default function hasAccess(accessLevel) {
   return (request, response, next) => {
+    console.log(request.user);
     if (accessLevel === 'public') {
       return next();
     }
@@ -9,5 +10,5 @@ export default function hasAccess(accessLevel) {
     return response.json({
       error: `Unauthorized. Only ${accessLevel} users can request this.`
     });
-  }
+  };
 }
